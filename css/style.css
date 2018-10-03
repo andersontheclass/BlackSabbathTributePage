@@ -1,0 +1,166 @@
+
+/* css variables wow */
+:root {
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .6);
+
+
+    --line: 1px solid var(--color-grey-light-2);
+}
+
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+::selection {
+    background-color: #ffda79;
+    color: #fff;
+}
+
+.clearfix { zoom: 1; }
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+html {
+
+    /* Convert 1rem to 10px */
+    font-size: 62.5%; /* 10px/16px = 0.625 * 100 = 62.5%; 1rem = 10px */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f0eeee;
+    box-sizing: border-box;
+    padding: 3rem;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    background-color: rgba(255, 218, 121, 0.28);
+    height: 85vh;
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-small.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+.header:hover {
+    transform: scale(1.001);
+    transition: all .2s;
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-big.jpg);
+}
+
+.header:active {
+    background-image: linear-gradient(to right bottom, rgba(34, 112, 147, .7), rgba(255, 218, 121, .6)), url(../img/black-sabbath-cover-small.jpg);
+    transition: all .2s;
+}
+
+
+h1 {
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 2rem;
+    color: rgb(78, 78, 76);
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 1.5rem;
+    font-family: inherit;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 75%;
+    left: 2%;
+}
+
+/* Button */
+.btn-text:link, 
+.btn-text:visited {
+    font-size: 2rem;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    padding: .7rem;
+}
+
+.btn-text:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #227093;
+    box-shadow:0 0 1rem rgba(0,0,0,0.8);
+    transform: translateY(-.2rem);
+    border-bottom: none;
+    transition: all .3s;
+}
+
+.btn-text:active {
+    box-shadow: 0 10px 6px -6px #777;
+    transform: translateY(0) scale(1.10);
+    transition: all .3s;
+}
+
+/* */
+
+.img-div {
+    margin-top: 5rem;
+}
+
+.img-div ul {
+    list-style: none;
+    width: 100%;
+}
+
+.img-div ul li {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.img-div ul li figure {
+    width: 100%;
+    
+    overflow: hidden;
+}
+
+.img-div ul li figure img {
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.15);
+    transition: opacity 0.5s, transform 0.5s;
+    background-color: rgba(157, 152, 140, 0.89);;
+}
+
+.img-div ul li figure img:hover {
+    opacity: 1;
+    transform: scale(1.08);
+}
