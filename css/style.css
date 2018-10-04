@@ -1,21 +1,4 @@
 
-/* css variables wow */
-:root {
-    --color-grey-light-1: #faf9f9;
-    --color-grey-light-2: #f4f2f2;
-    --color-grey-light-3: #f0eeee;
-    --color-grey-light-4: #ccc;
-
-    --color-grey-dark-1: #333;
-    --color-grey-dark-2: #777;
-    --color-grey-dark-3: #999;
-
-    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
-    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .6);
-
-
-    --line: 1px solid var(--color-grey-light-2);
-}
 
 *, 
 *::before, 
@@ -56,19 +39,18 @@ body {
 
 /* HEADER */
 .header {
-    background-color: rgba(255, 218, 121, 0.28);
     height: 85vh;
     background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-small.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
-    box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 1rem .6rem -.6rem #777;
 }
 
 .header:hover {
     transform: scale(1.001);
     transition: all .2s;
-    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
     background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-big.jpg);
 }
 
@@ -78,7 +60,13 @@ body {
 }
 
 
-h1 {
+.header__text-box {
+    position: absolute;
+    top: 91%;
+    left: 2%;
+}
+
+.heading-secondary {
     font-family: inherit;
     text-transform: uppercase;
     font-size: 3rem;
@@ -88,19 +76,6 @@ h1 {
     color: rgb(78, 78, 76);
 }
 
-h2 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    text-align: center;
-    margin: 1.5rem;
-    font-family: inherit;
-}
-
-.header__text-box {
-    position: absolute;
-    top: 75%;
-    left: 2%;
-}
 
 /* Button */
 .btn-text:link, 
@@ -119,13 +94,13 @@ h2 {
     box-shadow:0 0 1rem rgba(0,0,0,0.8);
     transform: translateY(-.2rem);
     border-bottom: none;
-    transition: all .3s;
+    transition: all .2s;
 }
 
 .btn-text:active {
     box-shadow: 0 10px 6px -6px #777;
     transform: translateY(0) scale(1.10);
-    transition: all .3s;
+    transition: all .2s;
 }
 
 /* */

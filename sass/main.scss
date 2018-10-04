@@ -11,16 +11,21 @@
 
 // Components
 @import "button";
-@import "story";
+@import "card";
+@import "composition";
 @import "tribute-info";
-@import "popup";
+@import "story";
 
 // Layout-related sections
+//@import "footer";
+@import "grid";
 @import "header";
 @import "gallery";
 
 // Page-specific styles
 
 // Themes
+//@import "default";
 
 // Vendors
+@import "normalize";
