@@ -3,10 +3,10 @@
 .header {
     position: relative;
     
-    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-small.jpg);
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-big.jpg);
     background-size: cover;
     background-position: center;
-    box-shadow: 0 1rem .6rem -.6rem #777;
+    box-shadow: 0 1rem .6rem -.6rem $color-white;
     
     height: 85vh;
     
@@ -16,7 +16,7 @@
     }
     
     &:hover {
-        background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-big.jpg);
+        background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-small.jpg);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         transform: scale(1.001);
     }

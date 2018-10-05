@@ -53,6 +53,11 @@ body {
     transform: skewX(12deg) skewX(12deg) scale(1.01);
     text-shadow: 0.5rem 1rem 2rem rgba(78, 78, 76, 0.2); }
 
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -64,6 +69,9 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem !important; }
 
 .u-margin-top-medium {
   margin-top: 4rem !important; }
@@ -96,6 +104,69 @@ body {
   box-shadow: 0 1rem .6rem -.6rem #777;
   transform: translateY(0) scale(1.1); }
 
+.album-info-box {
+  font-size: 1.6rem;
+  padding-bottom: 4rem;
+  text-align: center;
+  border-radius: .5rem;
+  border-top-left-radius: 4.6rem;
+  border-top-right-radius: .8rem;
+  box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.8);
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.3), rgba(34, 112, 147, 0.1));
+  transition: all .2s;
+  position: relative; }
+  .album-info-box:hover {
+    transform: translateY(-1.4rem) scale(1.04); }
+  .album-info-box__picture {
+    background-blend-mode: screen;
+    background-size: cover;
+    height: 23rem;
+    border-top-left-radius: 4.6rem;
+    border-top-right-radius: .8rem;
+    -web-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%); }
+    .album-info-box__picture--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1970-Black-Sabbath_Black-Sabbath.jpg);
+      box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.4); }
+    .album-info-box__picture--2 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1970-Black-Sabbath_Paranoid.jpg); }
+    .album-info-box__picture--3 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1971-Black-Sabbath_Master-Of-Reality.jpg); }
+    .album-info-box__picture--4 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1972-Black-Sabbath_Vol-4.jpg); }
+  .album-info-box__heading {
+    position: absolute;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: left;
+    top: 20rem;
+    color: rgba(0, 0, 0, 0.62); }
+    .album-info-box__heading-span {
+      padding: 1rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone; }
+      .album-info-box__heading-span--1 {
+        background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.7), rgba(34, 112, 147, 0.7)); }
+      .album-info-box__heading-span--2 {
+        background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.7), rgba(34, 112, 147, 0.7)); }
+      .album-info-box__heading-span--3 {
+        background-image: linear-gradient(to right top, rgba(86, 67, 250, 0.7), rgba(255, 218, 121, 0.95)); }
+  .album-info-box__details {
+    padding: .8rem;
+    margin-top: 4rem; }
+    .album-info-box__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .album-info-box__details ul li {
+        text-align: left;
+        font-size: 1.7rem;
+        padding: .2rem; }
+        .album-info-box__details ul li span {
+          font-weight: 600; }
+        .album-info-box__details ul li:not(:last-child) {
+          border-bottom: 0.13rem solid #fff; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -125,15 +196,15 @@ body {
 
 .header {
   position: relative;
-  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-small.jpg);
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-big.jpg);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 1rem .6rem -.6rem #777;
+  box-shadow: 0 1rem 0.6rem -0.6rem #fff;
   height: 85vh; }
   .header:hover, .header:active {
     transition: all .2s; }
   .header:hover {
-    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-big.jpg);
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-small.jpg);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
     transform: scale(1.001); }
   .header:active {
