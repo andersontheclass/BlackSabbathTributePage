@@ -109,8 +109,8 @@ body {
   padding-bottom: 4rem;
   text-align: center;
   border-radius: .5rem;
-  border-top-left-radius: 4.6rem;
-  border-top-right-radius: .8rem;
+  border-top-right-radius: 4.6rem;
+  border-top-left-radius: .8rem;
   box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.8);
   background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.3), rgba(34, 112, 147, 0.1));
   transition: all .2s;
@@ -121,8 +121,8 @@ body {
     background-blend-mode: screen;
     background-size: cover;
     height: 23rem;
-    border-top-left-radius: 4.6rem;
-    border-top-right-radius: .8rem;
+    border-top-right-radius: 4.6rem;
+    border-top-left-radius: .8rem;
     -web-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%); }
     .album-info-box__picture--1 {
@@ -151,6 +151,8 @@ body {
         background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.7), rgba(34, 112, 147, 0.7)); }
       .album-info-box__heading-span--3 {
         background-image: linear-gradient(to right top, rgba(86, 67, 250, 0.7), rgba(255, 218, 121, 0.95)); }
+      .album-info-box__heading-span--4 {
+        background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.82), rgba(255, 119, 48, 0.7)); }
   .album-info-box__details {
     padding: .8rem;
     margin-top: 4rem; }
