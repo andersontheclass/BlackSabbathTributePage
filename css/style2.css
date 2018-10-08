@@ -104,6 +104,12 @@ body {
   box-shadow: 0 1rem .6rem -.6rem #777;
   transform: translateY(0) scale(1.1); }
 
+.btn--show-more {
+  border-radius: 5rem;
+  padding: 1rem 3rem;
+  border: none;
+  cursor: pointer; }
+
 .album-info-box {
   font-size: 1.6rem;
   padding-bottom: 4rem;
@@ -134,6 +140,22 @@ body {
       background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1971-Black-Sabbath_Master-Of-Reality.jpg); }
     .album-info-box__picture--4 {
       background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1972-Black-Sabbath_Vol-4.jpg); }
+    .album-info-box__picture--5 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1973-Black-Sabbath_Black-Bloody-Sabbath.jpg); }
+    .album-info-box__picture--6 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1975-Black_Sabbath_Sabotage.jpg); }
+    .album-info-box__picture--7 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1976-Black-Sabbath_Technical-Ecstasy.jpg); }
+    .album-info-box__picture--8 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1976-Black-Sabbath_Never-Say-Die.jpg); }
+    .album-info-box__picture--9 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1980-Black-Sabbath_Heaven-And-Hell.jpg); }
+    .album-info-box__picture--10 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1981-Black-Sabbath_Mob.jpg); }
+    .album-info-box__picture--11 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1983-Black-Sabbath_Born.jpg); }
+    .album-info-box__picture--12 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1986-Black-Sabbath_Seventh-Star.jpg); }
   .album-info-box__heading {
     position: absolute;
     font-weight: 900;
@@ -148,14 +170,30 @@ body {
       .album-info-box__heading-span--1 {
         background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.7), rgba(34, 112, 147, 0.7)); }
       .album-info-box__heading-span--2 {
-        background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.7), rgba(34, 112, 147, 0.7)); }
+        background-image: linear-gradient(to right bottom, rgba(248, 139, 99, 0.7), rgba(31, 82, 105, 0.7)); }
       .album-info-box__heading-span--3 {
         background-image: linear-gradient(to right top, rgba(86, 67, 250, 0.7), rgba(255, 218, 121, 0.95)); }
       .album-info-box__heading-span--4 {
         background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.82), rgba(255, 119, 48, 0.7)); }
+      .album-info-box__heading-span--5 {
+        background-image: linear-gradient(to right top, rgba(255, 142, 142, 0.5), rgba(255, 88, 48, 0.7)); }
+      .album-info-box__heading-span--6 {
+        background-image: linear-gradient(to left bottom, rgba(12, 49, 244, 0.7), rgba(235, 12, 3, 0.7)); }
+      .album-info-box__heading-span--7 {
+        background-image: linear-gradient(to right top, rgba(244, 226, 12, 0.7), rgba(89, 109, 175, 0.5)); }
+      .album-info-box__heading-span--8 {
+        background-image: linear-gradient(to right bottom, rgba(39, 60, 168, 0.6), rgba(64, 65, 57, 0.7)); }
+      .album-info-box__heading-span--9 {
+        background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.7), rgba(67, 116, 193, 0.7)); }
+      .album-info-box__heading-span--10 {
+        background-image: linear-gradient(to left bottom, rgba(255, 255, 255, 0.82), rgba(255, 119, 48, 0.7)); }
+      .album-info-box__heading-span--11 {
+        background-image: linear-gradient(to right bottom, rgba(248, 85, 85, 0.5), rgba(255, 88, 48, 0.6)); }
+      .album-info-box__heading-span--12 {
+        background-image: linear-gradient(to left bottom, rgba(209, 213, 232, 0.9), rgba(32, 33, 28, 0.8)); }
   .album-info-box__details {
     padding: .8rem;
-    margin-top: 4rem; }
+    margin-top: 5rem; }
     .album-info-box__details ul {
       list-style: none;
       width: 80%;
@@ -168,6 +206,9 @@ body {
           font-weight: 600; }
         .album-info-box__details ul li:not(:last-child) {
           border-bottom: 0.13rem solid #fff; }
+
+.js--show-more {
+  display: none; }
 
 .row {
   max-width: 114rem;
