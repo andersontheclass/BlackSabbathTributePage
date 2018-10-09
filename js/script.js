@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".show").click(function(){
-        $(".js--show-more").show();
+        $(".js--show-more").toggle();
     });
     
 });
