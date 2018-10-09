@@ -2,41 +2,42 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-.btn-text {
+.btn {
     
-    
-    &:link,
-    &:visited {
-        font-size: 2rem;
-        color: #fff;
-        display: inline-block;
-        text-decoration: none;
-        border-bottom: 1px solid #fff;
-        padding: .7rem;
-    }
-    
-    &:hover,
-    &:active {
-        transition: all .2s;
-    }
-    
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.5);
-        color: #227093;
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
-        transform: translateY(-.2rem);
-        border-bottom: none;
-    }
-    
-    &:active {
-        box-shadow: 0 1rem .6rem -.6rem #777;
-        transform: translateY(0) scale(1.10);
-    }
-}
-
-.btn--show-more {
-    border-radius: 5rem;
-    padding: 1rem 3rem;
+    padding: 1.5rem 3.5rem;
     border: none;
     cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4.5rem;
+    font-size: $default-font-size;
+    outline: none;
+    color: $color-white;
+    display: inline-block;
+    
+    &--learn-more {
+        &:link,
+        &:visited {
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        &:hover {
+            background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.5), rgba(34, 112, 147, 0.35));
+        }
+        
+        
+        &:active {
+            transform: scale(1.03); 
+        }
+    }
+    
+    &--show-more {
+        background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.5), rgba(34, 112, 147, 0.35));
+
+        &:active {
+            transform: scale(1.03);    
+        }
+    }   
 }
+

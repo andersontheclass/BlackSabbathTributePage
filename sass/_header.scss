@@ -31,4 +31,8 @@
         left: 2%;
     }
     
+    @include respond(phone) {
+        height: 30vh;
+        width: 100%;
+    }
 }

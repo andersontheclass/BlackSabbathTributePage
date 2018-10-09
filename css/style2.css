@@ -1,4 +1,24 @@
 /*
+
+1em = 16px; example: 16px / 2em = "8em"
+
+0 - 600px/37.5em: phone
+600 - 900px/56.25em: tablet portrait
+900 - 1200px/75em: tablet landscape
+[1200px/75em - 1800px/112.5em] is where our normal style apply
+1800px/112.5em + : Big desktop 
+
+$breakpoint argument choices:
+- phone
+- tab-portrait
+- tab-landscape
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px;
+*/
+/*
 COLORS:
 
 Light green: #7ed56f
@@ -21,6 +41,15 @@ Dark green: #28b485
 html {
   font-size: 62.5%;
   /* 10px / 16 = 0.625 * 100 = "62.5%" */ }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 56.25%; } }
 
 body {
   /* change the box, so that the borders the and padding are no longer added to the total width or the total height */
@@ -82,33 +111,28 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
-.btn-text:link, .btn-text:visited {
-  font-size: 2rem;
-  color: #fff;
-  display: inline-block;
-  text-decoration: none;
-  border-bottom: 1px solid #fff;
-  padding: .7rem; }
-
-.btn-text:hover, .btn-text:active {
-  transition: all .2s; }
-
-.btn-text:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #227093;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
-  transform: translateY(-0.2rem);
-  border-bottom: none; }
-
-.btn-text:active {
-  box-shadow: 0 1rem .6rem -.6rem #777;
-  transform: translateY(0) scale(1.1); }
-
-.btn--show-more {
-  border-radius: 5rem;
-  padding: 1rem 3rem;
+.btn {
+  padding: 1.5rem 3.5rem;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4.5rem;
+  font-size: 1.6rem;
+  outline: none;
+  color: #fff;
+  display: inline-block; }
+  .btn--learn-more:link, .btn--learn-more:visited {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none; }
+  .btn--learn-more:hover {
+    background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.5), rgba(34, 112, 147, 0.35)); }
+  .btn--learn-more:active {
+    transform: scale(1.03); }
+  .btn--show-more {
+    background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.5), rgba(34, 112, 147, 0.35)); }
+    .btn--show-more:active {
+      transform: scale(1.03); }
 
 .album-info-box {
   font-size: 1.6rem;
@@ -216,6 +240,13 @@ body {
   zoom: 1; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row::after {
     content: "";
     display: table;
@@ -224,6 +255,13 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -256,6 +294,10 @@ body {
     position: absolute;
     top: 88%;
     left: 2%; }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      height: 30vh;
+      width: 100%; } }
 
 .img-div ul {
   list-style: none;
