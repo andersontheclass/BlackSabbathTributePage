@@ -74,6 +74,38 @@
         &--12 {
             background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1986-Black-Sabbath_Seventh-Star.jpg);
         }
+        
+        &--13 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1987-Black-Sabbath_The-Eternal-Idol.jpg);
+        }
+        
+        &--14 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1989-Black-Sabbath_Headless-Cross.jpg);
+        }
+        
+        &--15 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1990-Black-Sabbath_Tyr.jpg);
+        }
+        
+        &--16 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1992-Black-sabbath_Dehumanizer.jpg);
+        }
+        
+        &--17 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1994-Black-Sabbath_Purposes.jpg);
+        }
+
+        &--18 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1995-Black-Sabbath-Forbidden.jpg);
+        }
+
+        &--19 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/2013-Black-Sabbath_13.jpg);
+        }
+        
+        &--20 {
+            background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/2016-Black-Sabbath_The-End.jpg);
+        }
     }
     
     &__heading {
@@ -137,12 +169,44 @@
                 background-image: linear-gradient(to left bottom, rgba(209, 213, 232, 0.9), rgba(32, 33, 28, 0.8));
             }
             
+            &--13 {
+                background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.5), rgba(195, 190, 82, 0.6));
+            }
+
+            &--14 {
+                background-image: linear-gradient(to left bottom, rgba(175, 178, 191, 0.9), rgba(35, 36, 32, 0.8));
+            }
+
+            &--15 {
+                background-image: linear-gradient(to right top, rgba(26, 25, 25, 0.9), rgba(242, 111, 80, 0.5));
+            }
+
+            &--16 {
+                background-image: linear-gradient(to left top, rgba(86, 67, 250, 0.7), rgba(255, 218, 121, 0.8));
+            }
+            
+            &--17 {
+                background-image: linear-gradient(to right top, rgba(107, 92, 244, 0.7), rgba(255, 250, 113, 0.95));
+            }
+            
+            &--18 {
+                background-image: linear-gradient(to right top, rgba(240, 23, 23, 0.5), rgba(28, 80, 252, 0.8));
+            }
+            
+            &--19 {
+                background-image: linear-gradient(to right bottom, rgba(244, 117, 12, 0.7), rgba(117, 121, 135, 0.5));
+            }
+            
+            &--20 {
+                background-image: linear-gradient(to right top, rgba(26, 25, 25, 0.9), rgba(242, 111, 80, 0.5));
+            }
         }
     }
     
     &__details {
         padding: .8rem;
         margin-top: 5rem;
+        
         ul {
             list-style: none;
             width: 80%;
@@ -161,10 +225,8 @@
                     border-bottom: .13rem solid $color-white;
                 }
             }
-            
         }       
     }
-    
 }
 
 .js--show-more {
