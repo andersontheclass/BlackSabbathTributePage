@@ -14,18 +14,26 @@
     color: $color-white;
     display: inline-block;
     
+    @include respond(phone) {
+        padding: 1.1rem 2.6rem;
+    }
+    
+    @include respond(tab-port) {
+        padding: 1.2rem 2.7rem;
+    }
+    
     &--learn-more {
         &:link,
         &:visited {
             color: #fff;
             display: inline-block;
             text-decoration: none;
+            position: relative;
         }
         
         &:hover {
             background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.5), rgba(34, 112, 147, 0.35));
         }
-        
         
         &:active {
             transform: scale(1.03); 

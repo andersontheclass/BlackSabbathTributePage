@@ -1,1 +1,11 @@
-// like natours section features-box
+.tribute-info {
+    
+    &__paragraph {
+        line-height: 145%;
+        margin: 2rem auto;
+        text-align: justify;
+        font-size: $default-font-size + .5rem;
+        width: 95%;
+    }
+    
+}
