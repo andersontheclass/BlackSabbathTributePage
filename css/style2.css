@@ -284,9 +284,9 @@ body {
   width: 95%; }
   .tribute-info__paragraph--link {
     text-decoration: none;
-    margin-left: 1rem; }
-    .tribute-info__paragraph--link:visited {
-      color: rgba(68, 68, 157, 0.51); }
+    margin-left: .6rem;
+    font-size: 2.1rem;
+    text-transform: none; }
 
 .row {
   max-width: 114rem;

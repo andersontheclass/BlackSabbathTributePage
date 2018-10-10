@@ -9,16 +9,14 @@
         
         &--link {
             text-decoration: none;
-            margin-left: 1rem;
+            margin-left: .6rem;
+            font-size: $default-font-size + .5rem;
+            text-transform: none;
             
             &:visited {
-                color: rgba(68, 68, 157, 0.51);
+                //color: rgba(9, 132, 227, 0.63);
             }
         }
         
-        
     }
-    
-    
-    
 }
