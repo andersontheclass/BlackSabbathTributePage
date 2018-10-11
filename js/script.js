@@ -13,10 +13,14 @@ $(document).ready(function(){
         });    
     });
     
+    // Owl-Carousel 
     $('.owl-carousel').owlCarousel({
-        items:4,
-        lazyLoad:true,
-        loop:true,
-        margin:10
+        items: 1,
+        lazyLoad: true,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2700,
+        autoplayHoverPause: true
     });
 });

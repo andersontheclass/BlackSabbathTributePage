@@ -28,16 +28,16 @@
     
     &__text-box {
         position: absolute;
-        top: 88%;
+        top: 86%;
         left: 1%;
         
         @include respond(phone) {
             top: 79%;
-            left: -.1%;
+            left: 0;
         }
         @include respond(tab-port) {
             //top: 83%;
-            //left: -.2%;
+            left: -.2%;
         }
     }
     
