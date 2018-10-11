@@ -1,23 +1,26 @@
 .img-div {
     position: relative;
-    
+
     &__caption {
         position: absolute;
-        margin-top: -2rem;
-        margin-left: .1rem;
+        margin-top: -4.1rem;
+        margin-left: 0;
         font-size: $default-font-size;
         font-weight: 700;
         z-index: 1000;
         
         
         @include respond(phone) {
-            top: 97%;
-            left: 8.45rem;
+            top: 98%;
+            left: 10.4rem;
             transform: translate(-50%, -50%);
             font-size: $default-font-size + .1rem;
         }
         
         @include respond(tab-port) {
+            top: 99.82%;
+            left: 10rem;
+            transform: translate(-50%, -50%);
             margin-top: -3rem;
         }
     }

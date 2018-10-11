@@ -108,6 +108,9 @@ body {
 .u-margin-top-medium {
   margin-top: 4rem !important; }
 
+.u-margin-top-negative-medium {
+  margin-top: -5rem !important; }
+
 .u-margin-top-big {
   margin-top: 8rem !important; }
 
@@ -151,7 +154,7 @@ body {
   border-radius: .5rem;
   border-top-right-radius: 4.6rem;
   border-top-left-radius: .8rem;
-  box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
   background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.3), rgba(34, 112, 147, 0.1));
   transition: all .2s;
   position: relative; }
@@ -280,8 +283,7 @@ body {
   line-height: 145%;
   margin: 2rem auto;
   text-align: justify;
-  font-size: 2.1rem;
-  width: 95%; }
+  font-size: 2.1rem; }
   .tribute-info__paragraph--link {
     text-decoration: none;
     margin-left: .6rem;
@@ -367,19 +369,22 @@ body {
   position: relative; }
   .img-div__caption {
     position: absolute;
-    margin-top: -2rem;
-    margin-left: .1rem;
+    margin-top: -4.1rem;
+    margin-left: 0;
     font-size: 1.6rem;
     font-weight: 700;
     z-index: 1000; }
     @media only screen and (max-width: 37.5em) {
       .img-div__caption {
-        top: 97%;
-        left: 8.45rem;
+        top: 98%;
+        left: 10.4rem;
         transform: translate(-50%, -50%);
         font-size: 1.7rem; } }
     @media only screen and (max-width: 56.25em) {
       .img-div__caption {
+        top: 99.82%;
+        left: 10rem;
+        transform: translate(-50%, -50%);
         margin-top: -3rem; } }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
