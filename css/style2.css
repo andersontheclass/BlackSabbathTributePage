@@ -280,16 +280,61 @@ body {
 .js--show-more {
   display: none; }
 
-.tribute-info__paragraph {
-  line-height: 145%;
-  margin: 2rem auto;
-  text-align: justify;
-  font-size: 2.1rem; }
-  .tribute-info__paragraph--link {
-    text-decoration: none;
-    margin-left: .6rem;
-    font-size: 2.1rem;
-    text-transform: none; }
+.tribute-info {
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.02), rgba(34, 112, 147, 0.02)); }
+  .tribute-info__paragraph {
+    line-height: 145%;
+    margin: 2rem auto;
+    text-align: justify;
+    font-size: 2.1rem; }
+    .tribute-info__paragraph--link {
+      text-decoration: none;
+      margin-left: .6rem;
+      font-size: 2.1rem;
+      text-transform: none; }
+
+.band-bio {
+  margin: 0 auto;
+  padding: 5rem 4rem;
+  width: 90%;
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.05), rgba(34, 112, 147, 0.05));
+  box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
+  font-size: 1.6rem;
+  position: relative; }
+  .band-bio__img {
+    height: 100%;
+    margin-left: 9%;
+    border-radius: 55%;
+    height: 25rem;
+    width: 25rem; }
+    @media only screen and (max-width: 56.25em) {
+      .band-bio__img {
+        margin-left: -40%;
+        width: 20rem;
+        height: 20rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .band-bio__img {
+        margin-left: -50%;
+        width: 15rem;
+        height: 15rem; } }
+  .band-bio__caption {
+    position: absolute;
+    margin-top: -3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.62);
+    position: absolute; }
+    @media only screen and (max-width: 37.5em) {
+      .band-bio__caption {
+        margin-top: -2.8rem; } }
+    .band-bio__caption-span {
+      padding: 1rem; }
+      .band-bio__caption-span--1 {
+        background-image: linear-gradient(to left top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.25)); }
+      .band-bio__caption-span--2 {
+        background-image: linear-gradient(to left bottom, rgba(209, 213, 232, 0.4), rgba(32, 33, 28, 0.4)); }
+  .band-bio__text {
+    text-align: justify; }
 
 .row {
   max-width: 114rem;
@@ -371,15 +416,15 @@ body {
   position: relative; }
   .img-div__caption {
     position: absolute;
-    margin-top: -4.1rem;
+    margin-top: -4rem;
     margin-left: 0;
     font-size: 1.6rem;
     font-weight: 700;
     z-index: 1000; }
     @media only screen and (max-width: 37.5em) {
       .img-div__caption {
-        top: 98%;
-        left: 10.4rem;
+        top: 95.8% !important;
+        left: 10.5rem !important;
         transform: translate(-50%, -50%);
         font-size: 1.7rem; } }
     @media only screen and (max-width: 56.25em) {
@@ -388,6 +433,9 @@ body {
         left: 10rem;
         transform: translate(-50%, -50%);
         margin-top: -3rem; } }
+
+.section-album-info {
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.02), rgba(34, 112, 147, 0.02)); }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**

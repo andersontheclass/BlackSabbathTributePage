@@ -1,4 +1,5 @@
 // Album info section stuff
+
 .album-info-box {
     //background-color: rgba(52, 172, 224, 0.2);
     font-size: 1.6rem;
@@ -11,6 +12,7 @@
     background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .3), rgba(34, 112, 147, .1));
     transition: all .2s;
     position: relative;
+    //backface-visibility: hidden; //removes the small glitch on the :hover
     //
     &:hover {
         transform: translateY(-1.4rem) scale(1.04);
