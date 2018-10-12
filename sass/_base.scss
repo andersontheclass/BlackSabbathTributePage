@@ -31,15 +31,16 @@ html {
     @include respond(phone) { //width < 600?
         font-size: 40%; //
     }
+    
 }
 
 body {
     /* change the box, so that the borders the and padding are no longer added to the total width or the total height */
     /* that we specify for a box. So, without this any paddings, borders are added to the height or the width of an element  */
     box-sizing: border-box;
-    
-    padding: 3rem;
+    padding: 0rem;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 ::selection {

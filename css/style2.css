@@ -58,8 +58,9 @@ body {
   /* change the box, so that the borders the and padding are no longer added to the total width or the total height */
   /* that we specify for a box. So, without this any paddings, borders are added to the height or the width of an element  */
   box-sizing: border-box;
-  padding: 3rem;
-  text-rendering: optimizeLegibility; }
+  padding: 0rem;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden; }
 
 ::selection {
   background-color: #ffda79;
@@ -341,7 +342,8 @@ body {
   background-size: cover;
   background-position: center;
   box-shadow: 0 1rem 0.6rem -0.6rem #fff;
-  height: 80vh; }
+  height: 100vh;
+  overflow: hidden; }
   .header:hover, .header:active {
     transition: all .2s; }
   .header:hover {
