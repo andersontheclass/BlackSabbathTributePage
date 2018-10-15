@@ -293,48 +293,87 @@ body {
       font-size: 2.1rem;
       text-transform: none; }
 
-.band-bio {
-  margin: 0 auto;
-  padding: 5rem 4rem;
-  width: 90%;
-  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.05), rgba(34, 112, 147, 0.05));
-  box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
-  font-size: 1.6rem;
-  position: relative; }
-  .band-bio__img {
-    height: 100%;
-    margin-left: 9%;
-    border-radius: 55%;
-    height: 25rem;
-    width: 25rem; }
-    @media only screen and (max-width: 56.25em) {
-      .band-bio__img {
-        margin-left: -40%;
-        width: 20rem;
-        height: 20rem; } }
-    @media only screen and (max-width: 37.5em) {
-      .band-bio__img {
-        margin-left: -50%;
-        width: 15rem;
-        height: 15rem; } }
-  .band-bio__caption {
-    position: absolute;
-    margin-top: -3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.62);
-    position: absolute; }
-    @media only screen and (max-width: 37.5em) {
-      .band-bio__caption {
-        margin-top: -2.8rem; } }
-    .band-bio__caption-span {
-      padding: 1rem; }
-      .band-bio__caption-span--1 {
-        background-image: linear-gradient(to left top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.25)); }
-      .band-bio__caption-span--2 {
-        background-image: linear-gradient(to left bottom, rgba(209, 213, 232, 0.4), rgba(32, 33, 28, 0.4)); }
-  .band-bio__text {
-    text-align: justify; }
+.band-bio-col--colored {
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)); }
+  .band-bio-col--colored .band-bio {
+    margin: 0 auto;
+    padding: 5rem 4rem;
+    width: 90%;
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.05), rgba(34, 112, 147, 0.05));
+    box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
+    font-size: 1.6rem;
+    position: relative; }
+    .band-bio-col--colored .band-bio__img {
+      height: 100%;
+      margin-left: 9%;
+      border-radius: 55%;
+      height: 25rem;
+      width: 25rem; }
+      @media only screen and (max-width: 56.25em) {
+        .band-bio-col--colored .band-bio__img {
+          margin-left: -40%;
+          width: 20rem;
+          height: 20rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .band-bio-col--colored .band-bio__img {
+          margin-left: -50%;
+          width: 15rem;
+          height: 15rem; } }
+    .band-bio-col--colored .band-bio__caption {
+      position: absolute;
+      margin-top: -3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.62); }
+      @media only screen and (max-width: 37.5em) {
+        .band-bio-col--colored .band-bio__caption {
+          margin-top: -2.6rem; } }
+      .band-bio-col--colored .band-bio__caption--1 {
+        margin-left: 28%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--1 {
+            margin-left: 13.7%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--1 {
+            margin-left: 14.4%;
+            margin-top: -2.8rem; } }
+      .band-bio-col--colored .band-bio__caption--2 {
+        margin-left: 25%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--2 {
+            margin-left: 8%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--2 {
+            margin-left: 8%; } }
+      .band-bio-col--colored .band-bio__caption--3 {
+        margin-left: 25.8%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--3 {
+            margin-left: 10%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--3 {
+            margin-left: 10%; } }
+      .band-bio-col--colored .band-bio__caption--4 {
+        margin-left: 30%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--4 {
+            margin-left: 8%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--4 {
+            margin-left: 17.5%; } }
+      .band-bio-col--colored .band-bio__caption-span {
+        padding: 1rem; }
+        .band-bio-col--colored .band-bio__caption-span--1 {
+          background-image: linear-gradient(to left top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.25)); }
+        .band-bio-col--colored .band-bio__caption-span--2 {
+          background-image: linear-gradient(to right top, rgba(252, 178, 13, 0.33), rgba(18, 18, 18, 0.31)); }
+        .band-bio-col--colored .band-bio__caption-span--3 {
+          background-image: linear-gradient(to left bottom, rgba(252, 178, 13, 0.33), rgba(18, 18, 18, 0.31)); }
+        .band-bio-col--colored .band-bio__caption-span--4 {
+          background-image: linear-gradient(to right top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.35)); }
+    .band-bio-col--colored .band-bio__text {
+      margin-top: 2.8rem;
+      text-align: justify; }
 
 .row {
   max-width: 114rem;
@@ -384,6 +423,7 @@ body {
 .header {
   position: relative;
   background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-big.jpg);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   box-shadow: 0 1rem 0.6rem -0.6rem #fff;
@@ -410,7 +450,11 @@ body {
         left: -.2%; } }
   @media only screen and (max-width: 37.5em) {
     .header {
-      height: 30vh; } }
+      height: 30vh;
+      background-attachment: inherit !important; } }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      background-attachment: inherit !important !important; } }
 
 .img-div {
   position: relative; }
@@ -434,7 +478,7 @@ body {
         transform: translate(-50%, -50%);
         margin-top: -3rem; } }
 
-.section-album-info {
+.section-album-info, .section-band-bio {
   background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.02), rgba(34, 112, 147, 0.02)); }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */

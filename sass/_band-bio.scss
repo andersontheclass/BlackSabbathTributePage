@@ -1,81 +1,139 @@
-// band guys like natours section-story
+//
+.band-bio-col--colored {
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1));
+    
+    .band-bio {
+        margin: 0 auto;
+        padding: 5rem 4rem;
+        //padding-left: 1rem;
+        width: 90%;
+        background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.05), rgba(34, 112, 147, 0.05));
+        box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
+        font-size: $default-font-size;
+        position: relative;
+        @include respond(tab-port) {
+            //width: 90%;
+            //padding: 4rem;
+            //padding-left: 5rem;
+        }
 
-.band-bio {
-    margin: 0 auto;
-    padding: 5rem 4rem;
-    //padding-left: 1rem;
-    width: 90%;
-    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.05), rgba(34, 112, 147, 0.05));
-    box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
-    font-size: $default-font-size;
-    position: relative;
-    @include respond(tab-port) {
-        //width: 90%;
-        //padding: 4rem;
-        //padding-left: 5rem;
-    }
-    
-    &__shape {
-        
-    }
-    
-    &__img {
-        height: 100%;
-        margin-left: 9%;
-        border-radius: 55%;
-        height: 25rem;
-        width: 25rem;
-        @include respond(tab-port) {
-            //transform: translateX(-5rem);
-            margin-left: -40%;
-            width: 20rem;
-            height: 20rem;  
+        &__shape {
+
         }
-        
-        @include respond(phone) {
-            //transform: translateX(-5rem);
-            margin-left: -50%;
-            width: 15rem;
-            height: 15rem;
+
+        &__img {
+            height: 100%;
+            margin-left: 9%;
+            border-radius: 55%;
+            height: 25rem;
+            width: 25rem;
+            @include respond(tab-port) {
+                //transform: translateX(-5rem);
+                margin-left: -40%;
+                width: 20rem;
+                height: 20rem;  
+            }
+
+            @include respond(phone) {
+                //transform: translateX(-5rem);
+                margin-left: -50%;
+                width: 15rem;
+                height: 15rem;
+            }
         }
-    }
-    
-    
-    &__caption {
-        position: absolute;
-        //margin-left: 28%;
-        margin-top: -3rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: rgba(0, 0, 0, 0.62);
-        position: absolute;
-        
-        @include respond(tab-port) {
-            //margin-left: 13.7%;
-        }
-        
-        @include respond(phone) {
-            //margin-left: 14.5%;
-            margin-top: -2.8rem;
-        }
-        
-        &-span {
-            padding: 1rem;
-            
-            //-webkit-box-decoration-break: clone;
-            //box-decoration-break: clone;
-            
+
+
+        &__caption {
+            position: absolute;
+            margin-top: -3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.62);
+
+            @include respond(tab-port) {
+
+            }
+
+            @include respond(phone) {
+                margin-top: -2.6rem;
+            }
+
             &--1 {
-                background-image: linear-gradient(to left top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.25));
+                margin-left: 28%;
+
+                @include respond(tab-port) {
+                    margin-left: 13.7%;
+                }
+
+                @include respond(phone) {
+                    margin-left: 14.4%;
+                    margin-top: -2.8rem;
+                }
             }
-            
+
             &--2 {
-                background-image: linear-gradient(to left bottom, rgba(209, 213, 232, 0.4), rgba(32, 33, 28, 0.4));
+                margin-left: 25%;
+
+                @include respond(tab-port) {
+                    margin-left: 8%;
+                }
+
+                @include respond(phone) {
+                    margin-left: 8%;
+                }
+            }
+
+            &--3 {
+                margin-left: 25.8%;
+
+                @include respond(tab-port) {
+                    margin-left: 10%;
+                }
+
+                @include respond(phone) {
+                    margin-left: 10%;
+                }
+            }
+
+            &--4 {
+                margin-left: 30%;
+
+                @include respond(tab-port) {
+                    margin-left: 8%;
+                }
+
+                @include respond(phone) {
+                    margin-left: 17.5%;
+                }
+            }
+
+            &-span {
+                padding: 1rem;
+
+                //-webkit-box-decoration-break: clone;
+                //box-decoration-break: clone;
+
+                &--1 {
+                    background-image: linear-gradient(to left top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.25));
+                }
+
+                &--2 {
+                    background-image: linear-gradient(to right top, rgba(252, 178, 13, 0.33), rgba(18, 18, 18, 0.31));
+                }
+
+                &--3 {
+                    background-image: linear-gradient(to left bottom, rgba(252, 178, 13, 0.33), rgba(18, 18, 18, 0.31));
+                }
+
+                &--4 {
+                    background-image: linear-gradient(to right top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.35));
+                }
             }
         }
-    }
-    
-    &__text {
-        text-align: justify;
+
+        &__text {
+            margin-top: 2.8rem;
+            text-align: justify;
+        }
     }
 }
