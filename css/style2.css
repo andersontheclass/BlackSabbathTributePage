@@ -170,46 +170,46 @@ body {
     -web-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%); }
     .album-info-box__picture--1 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1970-Black-Sabbath_Black-Sabbath.jpg);
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1970-Black-Sabbath_Black-Sabbath.jpg);
       box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.4); }
     .album-info-box__picture--2 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1970-Black-Sabbath_Paranoid.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1970-Black-Sabbath_Paranoid.jpg); }
     .album-info-box__picture--3 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1971-Black-Sabbath_Master-Of-Reality.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1971-Black-Sabbath_Master-Of-Reality.jpg); }
     .album-info-box__picture--4 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1972-Black-Sabbath_Vol-4.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1972-Black-Sabbath_Vol-4.jpg); }
     .album-info-box__picture--5 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1973-Black-Sabbath_Black-Bloody-Sabbath.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1973-Black-Sabbath_Black-Bloody-Sabbath.jpg); }
     .album-info-box__picture--6 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1975-Black_Sabbath_Sabotage.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1975-Black_Sabbath_Sabotage.jpg); }
     .album-info-box__picture--7 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1976-Black-Sabbath_Technical-Ecstasy.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1976-Black-Sabbath_Technical-Ecstasy.jpg); }
     .album-info-box__picture--8 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1976-Black-Sabbath_Never-Say-Die.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1976-Black-Sabbath_Never-Say-Die.jpg); }
     .album-info-box__picture--9 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1980-Black-Sabbath_Heaven-And-Hell.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1980-Black-Sabbath_Heaven-And-Hell.jpg); }
     .album-info-box__picture--10 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1981-Black-Sabbath_Mob.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1981-Black-Sabbath_Mob.jpg); }
     .album-info-box__picture--11 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1983-Black-Sabbath_Born.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1983-Black-Sabbath_Born.jpg); }
     .album-info-box__picture--12 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1986-Black-Sabbath_Seventh-Star.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1986-Black-Sabbath_Seventh-Star.jpg); }
     .album-info-box__picture--13 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1987-Black-Sabbath_The-Eternal-Idol.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1987-Black-Sabbath_The-Eternal-Idol.jpg); }
     .album-info-box__picture--14 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1989-Black-Sabbath_Headless-Cross.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1989-Black-Sabbath_Headless-Cross.jpg); }
     .album-info-box__picture--15 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1990-Black-Sabbath_Tyr.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1990-Black-Sabbath_Tyr.jpg); }
     .album-info-box__picture--16 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1992-Black-sabbath_Dehumanizer.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1992-Black-sabbath_Dehumanizer.jpg); }
     .album-info-box__picture--17 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1994-Black-Sabbath_Purposes.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1994-Black-Sabbath_Purposes.jpg); }
     .album-info-box__picture--18 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/1995-Black-Sabbath-Forbidden.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1995-Black-Sabbath-Forbidden.jpg); }
     .album-info-box__picture--19 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/2013-Black-Sabbath_13.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/2013-Black-Sabbath_13.jpg); }
     .album-info-box__picture--20 {
-      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/2016-Black-Sabbath_The-End.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/2016-Black-Sabbath_The-End.jpg); }
   .album-info-box__heading {
     position: absolute;
     font-weight: 900;
@@ -433,6 +433,7 @@ body {
     transition: all .2s; }
   .header:hover {
     background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-small.jpg);
+    background-attachment: fixed;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
     transform: scale(1.001); }
   .header:active {
@@ -450,11 +451,10 @@ body {
         left: -.2%; } }
   @media only screen and (max-width: 37.5em) {
     .header {
-      height: 30vh;
-      background-attachment: inherit !important; } }
+      height: 30vh; } }
   @media only screen and (max-width: 56.25em) {
     .header {
-      background-attachment: inherit !important !important; } }
+      background-attachment: inherit !important; } }
 
 .img-div {
   position: relative; }
@@ -478,8 +478,8 @@ body {
         transform: translate(-50%, -50%);
         margin-top: -3rem; } }
 
-.section-album-info, .section-band-bio {
-  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.02), rgba(34, 112, 147, 0.02)); }
+.section-tribute-info {
+  box-sizing: content-box; }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**

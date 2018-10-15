@@ -19,7 +19,7 @@
     
     &:hover {
         background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-small.jpg);
-        //background-attachment: fixed;
+        background-attachment: fixed;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         transform: scale(1.001);
         
@@ -47,13 +47,11 @@
     
     @include respond(phone) {
         height: 30vh;
-        //background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-big.jpg);
-        background-attachment: inherit !important;
     }
     
     @include respond(tab-port) {
         //height: 60vh;
         //top: 75%;
-        background-attachment: inherit !important !important;
+        background-attachment: inherit !important;
     }
 }
