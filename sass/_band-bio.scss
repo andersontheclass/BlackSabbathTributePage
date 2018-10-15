@@ -1,6 +1,13 @@
 //
 .band-bio-col--colored {
     background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1));
+    transform: skewY(0);
+    transform: skewX(0);
+    backface-visibility: hidden;
+    
+    &:hover {
+        transform: translateY(-1rem) scale(1.0);
+    }
     
     .band-bio {
         margin: 0 auto;

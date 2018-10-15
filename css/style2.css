@@ -294,7 +294,12 @@ body {
       text-transform: none; }
 
 .band-bio-col--colored {
-  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)); }
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1));
+  transform: skewY(0);
+  transform: skewX(0);
+  backface-visibility: hidden; }
+  .band-bio-col--colored:hover {
+    transform: translateY(-1rem) scale(1); }
   .band-bio-col--colored .band-bio {
     margin: 0 auto;
     padding: 5rem 4rem;
