@@ -387,6 +387,19 @@ body {
   @media only screen and (max-width: 56.25em) {
     .footer {
       padding: 8rem 0; } }
+  .footer__link:link, .footer__link:visited {
+    color: #777;
+    background-image: linear-gradient(to right top, rgba(255, 218, 121, 0.2), rgba(34, 112, 147, 0.1));
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #333;
+    background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.4), rgba(34, 112, 147, 0.1));
+    transform: rotate(5deg) scale(1.5);
+    font-weight: 500; }
   .footer__copyright {
     text-align: justify;
     width: 100%;

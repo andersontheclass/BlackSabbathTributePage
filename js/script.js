@@ -14,6 +14,11 @@ $(document).ready(function(){
         });    
     });
     
+    //Navigation scroll 
+    $('.js--scroll-to-tribute-info').click(function() {
+        $('html, header').animate({scrollTop: $('.js--section-tribute-info').offset().top}, 1000); 
+    });
+
     // Owl-Carousel 
     $('.owl-carousel').owlCarousel({
         items: 1,
