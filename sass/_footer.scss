@@ -1,0 +1,41 @@
+.footer {
+    
+    padding: 10rem 4rem;
+    font-size: $default-font-size + .1rem;
+    background-image: linear-gradient(to right top, rgba(34, 112, 147, .4), rgba(255, 218, 121, .3));
+    
+    @include respond(tab-port) {
+        padding: 8rem 0;
+    }
+    
+    &__copyright {
+        text-align: justify;
+        width: 100%;
+        margin-left: 50%;
+        border-top: 0.13rem solid $color-white;
+        border-bottom: 0.13rem solid $color-white;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        
+        @include respond(tab-port) {
+
+            margin-left: 0;
+            padding: 2rem 0;
+            margin-left: 0;
+            border-top: 0.13rem solid $color-white;
+            border-bottom: 0.13rem solid $color-white;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        @include respond(phone) {
+
+            padding: 2rem 0;
+            margin-left: 0;
+            border-top: 0.13rem solid $color-white;
+            border-bottom: 0.13rem solid $color-white;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
