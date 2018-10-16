@@ -518,7 +518,7 @@ body {
     z-index: 1000; }
     @media only screen and (max-width: 37.5em) {
       .img-div__caption {
-        top: 95.8% !important;
+        top: 88.8% !important;
         left: 10.5rem !important;
         transform: translate(-50%, -50%);
         font-size: 1.7rem; } }
