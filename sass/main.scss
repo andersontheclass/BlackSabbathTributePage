@@ -1,33 +1,31 @@
 // Configuration and helpers
 //@import "functions";
-@import "mixins";
-@import "variables";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
 // Base stuff
 //@import "animations";
-@import "base";
-@import "typography";
-@import "utilities";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
 // Components
-@import "button";
-//@import "card";
-//@import "composition";
-@import "album-info";
-@import "tribute-info";
-@import "band-bio";
+@import "components/album-info";
+@import "components/band-bio";
+@import "components/button";
+@import "components/gallery";
+@import "components/tribute-info";
 
 // Layout-related sections
-@import "footer";
-@import "grid";
-@import "header";
-@import "gallery";
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
 
 // Page-specific styles
-@import "home";
+@import "pages/home";
 
 // Themes
-//@import "default";
+@import "themes/default";
 
 // Vendors
-@import "normalize";
+@import "vendors/normalize";
