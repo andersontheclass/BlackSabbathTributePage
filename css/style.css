@@ -1,141 +1,940 @@
+/*
 
+1em = 16px; example: 16px / 2em = "8em"
 
-*, 
-*::before, 
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+0 - 600px/37.5em: phone
+600 - 900px/56.25em: tablet portrait
+900 - 1200px/75em: tablet landscape
+[1200px/75em - 1800px/112.5em] is where our normal style apply
+1800px/112.5em + : Big desktop 
 
-::selection {
-    background-color: #ffda79;
-    color: #fff;
-}
+$breakpoint argument choices:
+- phone
+- tab-portrait
+- tab-landscape
+- big-desktop
 
-.clearfix { zoom: 1; }
-.clearfix:after {
-    content: '.';
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px;
+*/
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+/**
+* Make all elements from the DOM inherit from the parent box-sizing
+* Since `*` has a specificity of 0, it does not override the `html` value
+* making all elements inheriting from the root box-sizing value
+* See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+/* We use this because by default some elements have their our padding/margin */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
 html {
-
-    /* Convert 1rem to 10px */
-    font-size: 62.5%; /* 10px/16px = 0.625 * 100 = 62.5%; 1rem = 10px */
-}
+  font-size: 62.5%;
+  /* 10px / 16 = 0.625 * 100 = "62.5%" */ }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
 
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: #f0eeee;
-    box-sizing: border-box;
-    padding: 3rem;
-    text-rendering: optimizeLegibility;
-    line-height: 1.6;
-}
+  /* change the box, so that the borders the and padding are no longer added to the total width or the total height */
+  /* that we specify for a box. So, without this any paddings, borders are added to the height or the width of an element  */
+  box-sizing: border-box;
+  padding: 0rem;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden; }
 
-/* HEADER */
-.header {
-    height: 85vh;
-    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-small.jpg);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    box-shadow: 0 1rem .6rem -.6rem #777;
-}
+::selection {
+  background-color: #ffda79;
+  color: #fff; }
 
-.header:hover {
-    transform: scale(1.001);
-    transition: all .2s;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, .6), rgba(34, 112, 147, .7)), url(../img/black-sabbath-cover-big.jpg);
-}
-
-.header:active {
-    background-image: linear-gradient(to right bottom, rgba(34, 112, 147, .7), rgba(255, 218, 121, .6)), url(../img/black-sabbath-cover-small.jpg);
-    transition: all .2s;
-}
-
-
-.header__text-box {
-    position: absolute;
-    top: 91%;
-    left: 2%;
-}
+/* font stuff always go to body */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777; }
 
 .heading-secondary {
-    font-family: inherit;
-    text-transform: uppercase;
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    margin: 2rem;
-    color: rgb(78, 78, 76);
-}
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: transparent;
+  background-image: linear-gradient(to right bottom, #ffda79, #227093);
+  -webkit-background-clip: text;
+  transition: all .4s; }
+  .heading-secondary:hover {
+    transform: skewX(12deg) skewX(12deg) scale(1.01);
+    text-shadow: 0.5rem 1rem 2rem rgba(78, 78, 76, 0.2); }
 
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase; }
 
-/* Button */
-.btn-text:link, 
-.btn-text:visited {
-    font-size: 2rem;
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem !important; }
+
+.u-margin-top-medium {
+  margin-top: 4rem !important; }
+
+.u-margin-top-negative-medium {
+  margin-top: -5rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+.btn {
+  padding: 1.5rem 3.5rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4.5rem;
+  font-size: 1.6rem;
+  outline: none;
+  color: #fff;
+  display: inline-block; }
+  @media only screen and (max-width: 37.5em) {
+    .btn {
+      padding: 1.1rem 2.6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .btn {
+      padding: 1.2rem 2.7rem; } }
+  .btn--learn-more:link, .btn--learn-more:visited {
     color: #fff;
     display: inline-block;
     text-decoration: none;
-    border-bottom: 1px solid #fff;
-    padding: .7rem;
-}
+    position: relative; }
+  .btn--learn-more:hover {
+    background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.5), rgba(34, 112, 147, 0.35)); }
+  .btn--learn-more:active {
+    transform: scale(1.03); }
+  .btn--show-more {
+    background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.5), rgba(34, 112, 147, 0.35)); }
+    .btn--show-more:active {
+      transform: scale(1.03); }
 
-.btn-text:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #227093;
-    box-shadow:0 0 1rem rgba(0,0,0,0.8);
-    transform: translateY(-.2rem);
-    border-bottom: none;
-    transition: all .2s;
-}
+.album-info-box {
+  font-size: 1.6rem;
+  padding-bottom: 4rem;
+  text-align: center;
+  border-radius: .5rem;
+  border-top-right-radius: 4.6rem;
+  border-top-left-radius: .8rem;
+  box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.3), rgba(34, 112, 147, 0.1));
+  transition: all .2s;
+  position: relative; }
+  .album-info-box:hover {
+    transform: translateY(-1.4rem) scale(1.04); }
+  .album-info-box__picture {
+    background-blend-mode: screen;
+    background-size: cover;
+    height: 23rem;
+    border-top-right-radius: 4.6rem;
+    border-top-left-radius: .8rem;
+    -web-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%); }
+    .album-info-box__picture--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1970-Black-Sabbath_Black-Sabbath.jpg);
+      box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.4); }
+    .album-info-box__picture--2 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1970-Black-Sabbath_Paranoid.jpg); }
+    .album-info-box__picture--3 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1971-Black-Sabbath_Master-Of-Reality.jpg); }
+    .album-info-box__picture--4 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1972-Black-Sabbath_Vol-4.jpg); }
+    .album-info-box__picture--5 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1973-Black-Sabbath_Black-Bloody-Sabbath.jpg); }
+    .album-info-box__picture--6 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1975-Black_Sabbath_Sabotage.jpg); }
+    .album-info-box__picture--7 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1976-Black-Sabbath_Technical-Ecstasy.jpg); }
+    .album-info-box__picture--8 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1976-Black-Sabbath_Never-Say-Die.jpg); }
+    .album-info-box__picture--9 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1980-Black-Sabbath_Heaven-And-Hell.jpg); }
+    .album-info-box__picture--10 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1981-Black-Sabbath_Mob.jpg); }
+    .album-info-box__picture--11 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1983-Black-Sabbath_Born.jpg); }
+    .album-info-box__picture--12 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1986-Black-Sabbath_Seventh-Star.jpg); }
+    .album-info-box__picture--13 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1987-Black-Sabbath_The-Eternal-Idol.jpg); }
+    .album-info-box__picture--14 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1989-Black-Sabbath_Headless-Cross.jpg); }
+    .album-info-box__picture--15 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1990-Black-Sabbath_Tyr.jpg); }
+    .album-info-box__picture--16 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1992-Black-sabbath_Dehumanizer.jpg); }
+    .album-info-box__picture--17 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1994-Black-Sabbath_Purposes.jpg); }
+    .album-info-box__picture--18 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/1995-Black-Sabbath-Forbidden.jpg); }
+    .album-info-box__picture--19 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/2013-Black-Sabbath_13.jpg); }
+    .album-info-box__picture--20 {
+      background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1)), url(../img/Studio-Album/2016-Black-Sabbath_The-End.jpg); }
+  .album-info-box__heading {
+    position: absolute;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: left;
+    top: 20rem;
+    color: rgba(0, 0, 0, 0.62); }
+    .album-info-box__heading-span {
+      padding: 1rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone; }
+      .album-info-box__heading-span--1 {
+        background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.7), rgba(34, 112, 147, 0.7)); }
+      .album-info-box__heading-span--2 {
+        background-image: linear-gradient(to right bottom, rgba(248, 139, 99, 0.7), rgba(31, 82, 105, 0.7)); }
+      .album-info-box__heading-span--3 {
+        background-image: linear-gradient(to right top, rgba(86, 67, 250, 0.7), rgba(255, 218, 121, 0.95)); }
+      .album-info-box__heading-span--4 {
+        background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.82), rgba(255, 119, 48, 0.7)); }
+      .album-info-box__heading-span--5 {
+        background-image: linear-gradient(to right top, rgba(255, 142, 142, 0.5), rgba(255, 88, 48, 0.7)); }
+      .album-info-box__heading-span--6 {
+        background-image: linear-gradient(to left bottom, rgba(12, 49, 244, 0.7), rgba(235, 12, 3, 0.7)); }
+      .album-info-box__heading-span--7 {
+        background-image: linear-gradient(to right top, rgba(244, 226, 12, 0.7), rgba(89, 109, 175, 0.5)); }
+      .album-info-box__heading-span--8 {
+        background-image: linear-gradient(to right bottom, rgba(39, 60, 168, 0.6), rgba(64, 65, 57, 0.7)); }
+      .album-info-box__heading-span--9 {
+        background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.7), rgba(67, 116, 193, 0.7)); }
+      .album-info-box__heading-span--10 {
+        background-image: linear-gradient(to left bottom, rgba(255, 255, 255, 0.82), rgba(255, 119, 48, 0.7)); }
+      .album-info-box__heading-span--11 {
+        background-image: linear-gradient(to right bottom, rgba(248, 85, 85, 0.5), rgba(255, 88, 48, 0.6)); }
+      .album-info-box__heading-span--12 {
+        background-image: linear-gradient(to left bottom, rgba(209, 213, 232, 0.9), rgba(32, 33, 28, 0.8)); }
+      .album-info-box__heading-span--13 {
+        background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.5), rgba(195, 190, 82, 0.6)); }
+      .album-info-box__heading-span--14 {
+        background-image: linear-gradient(to left bottom, rgba(175, 178, 191, 0.9), rgba(35, 36, 32, 0.8)); }
+      .album-info-box__heading-span--15 {
+        background-image: linear-gradient(to right top, rgba(26, 25, 25, 0.9), rgba(242, 111, 80, 0.5)); }
+      .album-info-box__heading-span--16 {
+        background-image: linear-gradient(to left top, rgba(86, 67, 250, 0.7), rgba(255, 218, 121, 0.8)); }
+      .album-info-box__heading-span--17 {
+        background-image: linear-gradient(to right top, rgba(107, 92, 244, 0.7), rgba(255, 250, 113, 0.95)); }
+      .album-info-box__heading-span--18 {
+        background-image: linear-gradient(to right top, rgba(240, 23, 23, 0.5), rgba(28, 80, 252, 0.8)); }
+      .album-info-box__heading-span--19 {
+        background-image: linear-gradient(to right bottom, rgba(244, 117, 12, 0.7), rgba(117, 121, 135, 0.5)); }
+      .album-info-box__heading-span--20 {
+        background-image: linear-gradient(to right top, rgba(26, 25, 25, 0.9), rgba(242, 111, 80, 0.5)); }
+  .album-info-box__details {
+    padding: .8rem;
+    margin-top: 5rem; }
+    .album-info-box__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .album-info-box__details ul li {
+        text-align: left;
+        font-size: 1.7rem;
+        padding: .2rem; }
+        .album-info-box__details ul li span {
+          font-weight: 600; }
+        .album-info-box__details ul li:not(:last-child) {
+          border-bottom: 0.13rem solid #fff; }
 
-.btn-text:active {
-    box-shadow: 0 10px 6px -6px #777;
-    transform: translateY(0) scale(1.10);
-    transition: all .2s;
-}
+.js--show-more {
+  display: none; }
 
-/* */
+.tribute-info {
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.02), rgba(34, 112, 147, 0.02)); }
+  .tribute-info__paragraph {
+    line-height: 145%;
+    margin: 2rem auto;
+    text-align: justify;
+    font-size: 2.1rem; }
+    .tribute-info__paragraph--link {
+      text-decoration: none;
+      margin-left: .6rem;
+      font-size: 2.1rem;
+      text-transform: none; }
+
+.band-bio-col--colored {
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.1), rgba(34, 112, 147, 0.1));
+  transform: skewY(0);
+  transform: skewX(0);
+  backface-visibility: hidden; }
+  .band-bio-col--colored:hover {
+    transform: translateY(-1rem) scale(1); }
+  .band-bio-col--colored .band-bio {
+    margin: 0 auto;
+    padding: 5rem 4rem;
+    width: 90%;
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.05), rgba(34, 112, 147, 0.05));
+    box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.37);
+    font-size: 1.6rem;
+    position: relative; }
+    .band-bio-col--colored .band-bio__img {
+      height: 100%;
+      margin-left: 9%;
+      border-radius: 55%;
+      height: 25rem;
+      width: 25rem; }
+      @media only screen and (max-width: 56.25em) {
+        .band-bio-col--colored .band-bio__img {
+          margin-left: -40%;
+          width: 20rem;
+          height: 20rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .band-bio-col--colored .band-bio__img {
+          margin-left: -50%;
+          width: 15rem;
+          height: 15rem; } }
+    .band-bio-col--colored .band-bio__caption {
+      position: absolute;
+      margin-top: -3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.62); }
+      @media only screen and (max-width: 37.5em) {
+        .band-bio-col--colored .band-bio__caption {
+          margin-top: -2.6rem; } }
+      .band-bio-col--colored .band-bio__caption--1 {
+        margin-left: 28%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--1 {
+            margin-left: 13.7%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--1 {
+            margin-left: 14.4%;
+            margin-top: -2.8rem; } }
+      .band-bio-col--colored .band-bio__caption--2 {
+        margin-left: 25%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--2 {
+            margin-left: 8%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--2 {
+            margin-left: 8%; } }
+      .band-bio-col--colored .band-bio__caption--3 {
+        margin-left: 25.8%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--3 {
+            margin-left: 10%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--3 {
+            margin-left: 10%; } }
+      .band-bio-col--colored .band-bio__caption--4 {
+        margin-left: 30%; }
+        @media only screen and (max-width: 56.25em) {
+          .band-bio-col--colored .band-bio__caption--4 {
+            margin-left: 8%; } }
+        @media only screen and (max-width: 37.5em) {
+          .band-bio-col--colored .band-bio__caption--4 {
+            margin-left: 17.5%; } }
+      .band-bio-col--colored .band-bio__caption-span {
+        padding: 1rem; }
+        .band-bio-col--colored .band-bio__caption-span--1 {
+          background-image: linear-gradient(to left top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.25)); }
+        .band-bio-col--colored .band-bio__caption-span--2 {
+          background-image: linear-gradient(to right top, rgba(252, 178, 13, 0.33), rgba(18, 18, 18, 0.31)); }
+        .band-bio-col--colored .band-bio__caption-span--3 {
+          background-image: linear-gradient(to left bottom, rgba(252, 178, 13, 0.33), rgba(18, 18, 18, 0.31)); }
+        .band-bio-col--colored .band-bio__caption-span--4 {
+          background-image: linear-gradient(to right top, rgba(113, 98, 245, 0.25), rgba(255, 218, 121, 0.35)); }
+    .band-bio-col--colored .band-bio__text {
+      margin-top: 2.8rem;
+      text-align: justify; }
+
+.footer {
+  padding: 10rem 4rem;
+  font-size: 1.7rem;
+  background-image: linear-gradient(to right top, rgba(34, 112, 147, 0.4), rgba(255, 218, 121, 0.3)); }
+  @media only screen and (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0; } }
+  .footer__link:link, .footer__link:visited {
+    color: #777;
+    background-image: linear-gradient(to right top, rgba(255, 218, 121, 0.2), rgba(34, 112, 147, 0.1));
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #333;
+    background-image: linear-gradient(to left bottom, rgba(255, 218, 121, 0.4), rgba(34, 112, 147, 0.1));
+    transform: rotate(5deg) scale(1.5);
+    font-weight: 500; }
+  .footer__copyright {
+    text-align: justify;
+    width: 100%;
+    margin-left: 50%;
+    border-top: 0.13rem solid #fff;
+    border-bottom: 0.13rem solid #fff;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__copyright {
+        margin-left: 0;
+        padding: 2rem 0;
+        margin-left: 0;
+        border-top: 0.13rem solid #fff;
+        border-bottom: 0.13rem solid #fff;
+        padding-top: 1rem;
+        padding-bottom: 1rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .footer__copyright {
+        padding: 2rem 0;
+        margin-left: 0;
+        border-top: 0.13rem solid #fff;
+        border-bottom: 0.13rem solid #fff;
+        padding-top: 1rem;
+        padding-bottom: 1rem; } }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  zoom: 1; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 35rem;
+      padding: 0 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .row {
+      max-width: 35rem;
+      padding: 0 2rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) /3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) /3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.header {
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-big.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1rem 0.6rem -0.6rem #fff;
+  height: 100vh;
+  overflow: hidden; }
+  .header:hover, .header:active {
+    transition: all .2s; }
+  .header:hover {
+    background-image: linear-gradient(to right bottom, rgba(255, 218, 121, 0.6), rgba(34, 112, 147, 0.7)), url(../img/black-sabbath-cover-small.jpg);
+    background-attachment: fixed;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    transform: scale(1.001); }
+  .header:active {
+    background-image: linear-gradient(to right bottom, rgba(34, 112, 147, 0.7), rgba(255, 218, 121, 0.6)), url(../img/black-sabbath-cover-small.jpg); }
+  .header__text-box {
+    position: absolute;
+    top: 86%;
+    left: 1%; }
+    @media only screen and (max-width: 37.5em) {
+      .header__text-box {
+        top: 79%;
+        left: 0; } }
+    @media only screen and (max-width: 56.25em) {
+      .header__text-box {
+        left: -.2%; } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      height: 30vh; } }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      background-attachment: inherit !important; } }
 
 .img-div {
-    margin-top: 5rem;
-}
+  position: relative; }
+  .img-div__caption {
+    position: absolute;
+    margin-top: -4rem;
+    margin-left: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    z-index: 1000; }
+    @media only screen and (max-width: 37.5em) {
+      .img-div__caption {
+        top: 96.8% !important;
+        left: 10.5rem !important;
+        transform: translate(-50%, -50%);
+        font-size: 1.7rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .img-div__caption {
+        top: 99.82%;
+        left: 10rem;
+        transform: translate(-50%, -50%);
+        margin-top: -3rem; } }
 
-.img-div ul {
-    list-style: none;
-    width: 100%;
-}
+.section-tribute-info {
+  box-sizing: content-box; }
 
-.img-div ul li {
-    display: block;
-    float: left;
-    width: 50%;
-}
+.section-band-bio {
+  padding-bottom: 8rem; }
 
-.img-div ul li figure {
-    width: 100%;
-    
-    overflow: hidden;
-}
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+* 1. Change the default font family in all browsers (opinionated).
+* 2. Correct the line height in all browsers.
+* 3. Prevent adjustments of font size after orientation changes in
+*    IE on Windows Phone and in iOS.
+*/
+/* Document
+========================================================================== */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
 
-.img-div ul li figure img {
-    opacity: 0.7;
-    width: 100%;
-    height: 100%;
-    transform: scale(1.15);
-    transition: opacity 0.5s, transform 0.5s;
-    background-color: rgba(157, 152, 140, 0.89);;
-}
+/* Sections
+========================================================================== */
+/**
+* Remove the margin in all browsers (opinionated).
+*/
+body {
+  margin: 0; }
 
-.img-div ul li figure img:hover {
-    opacity: 1;
-    transform: scale(1.08);
-}
+/**
+* Add the correct display in IE 9-.
+*/
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+* Correct the font size and margin on `h1` elements within `section` and
+* `article` contexts in Chrome, Firefox, and Safari.
+*/
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+========================================================================== */
+/**
+* Add the correct display in IE 9-.
+* 1. Add the correct display in IE.
+*/
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+* Add the correct margin in IE 8.
+*/
+figure {
+  margin: 1em 40px; }
+
+/**
+* 1. Add the correct box sizing in Firefox.
+* 2. Show the overflow in Edge and IE.
+*/
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+*/
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+========================================================================== */
+/**
+* 1. Remove the gray background on active links in IE 10.
+* 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+*/
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+* Remove the outline on focused links when they are also active or hovered
+* in all browsers (opinionated).
+*/
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/**
+* 1. Remove the bottom border in Firefox 39-.
+* 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+*/
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+* Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+*/
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+* Add the correct font weight in Chrome, Edge, and Safari.
+*/
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+* Add the correct font style in Android 4.3-.
+*/
+dfn {
+  font-style: italic; }
+
+/**
+* Add the correct background and color in IE 9-.
+*/
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+* Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%; }
+
+/**
+* Prevent `sub` and `sup` elements from affecting the line height in
+* all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+========================================================================== */
+/**
+* Add the correct display in IE 9-.
+*/
+audio,
+video {
+  display: inline-block; }
+
+/**
+* Add the correct display in iOS 4-7.
+*/
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+* Remove the border on images inside links in IE 10-.
+*/
+img {
+  border-style: none; }
+
+/**
+* Hide the overflow in IE.
+*/
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+========================================================================== */
+/**
+* 1. Change the font styles in all browsers (opinionated).
+* 2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+* Show the overflow in IE.
+* 1. Show the overflow in Edge.
+*/
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+* Remove the inheritance of text transform in Edge, Firefox, and IE.
+* 1. Remove the inheritance of text transform in Firefox.
+*/
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+* 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+*    controls in Android 4.
+* 2. Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+* Remove the inner border and padding in Firefox.
+*/
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+* Restore the focus styles unset by the previous rule.
+*/
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+* Change the border, margin, and padding in all browsers (opinionated).
+*/
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+* 1. Correct the text wrapping in Edge and IE.
+* 2. Correct the color inheritance from `fieldset` elements in IE.
+* 3. Remove the padding so developers are not caught out when they zero out
+*    `fieldset` elements in all browsers.
+*/
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+* 1. Add the correct display in IE 9-.
+* 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+*/
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+* Remove the default vertical scrollbar in IE.
+*/
+textarea {
+  overflow: auto; }
+
+/**
+* 1. Add the correct box sizing in IE 10-.
+* 2. Remove the padding in IE 10-.
+*/
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+* Correct the cursor style of increment and decrement buttons in Chrome.
+*/
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+* 1. Correct the odd appearance in Chrome and Safari.
+* 2. Correct the outline style in Safari.
+*/
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+* Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+*/
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+* 1. Correct the inability to style clickable types in iOS and Safari.
+* 2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+========================================================================== */
+/*
+* Add the correct display in IE 9-.
+* 1. Add the correct display in Edge, IE, and Firefox.
+*/
+details,
+menu {
+  display: block; }
+
+/*
+* Add the correct display in all browsers.
+*/
+summary {
+  display: list-item; }
+
+/* Scripting
+========================================================================== */
+/**
+* Add the correct display in IE 9-.
+*/
+canvas {
+  display: inline-block; }
+
+/**
+* Add the correct display in IE.
+*/
+template {
+  display: none; }
+
+/* Hidden
+========================================================================== */
+/**
+* Add the correct display in IE 10-.
+*/
+[hidden] {
+  display: none; }

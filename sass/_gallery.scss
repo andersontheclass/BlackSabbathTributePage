@@ -11,7 +11,7 @@
         z-index: 1000;
         
         @include respond(phone) {
-            top: 88.8% !important;
+            top: 96.8% !important;
             left: 10.5rem !important;
             transform: translate(-50%, -50%);
             font-size: $default-font-size + .1rem;
